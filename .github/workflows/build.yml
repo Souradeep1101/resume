@@ -1,15 +1,5 @@
 name: Build Resume
 
-on:
-  push:
-    tags:
-      - "*" # Only build when you push a tag like "v1.0" or "Jan2026"
-
-jobs:
-  build_latex:
-    runs-on: ubuntu-latest
-    steps:name: Build Resume
-
 # Trigger the build when you push a new tag (e.g., v1.0, v2026.1)
 on:
   push:
@@ -40,22 +30,4 @@ jobs:
           # This uploads the compiled PDF to the release
           # ENSURE THIS MATCHES THE OUTPUT FILENAME (usually same as .tex but with .pdf)
           files: |
-            resume.pdf
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: |
-            resume-systems.tex
-            resume-fullstack.tex
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
             resume-systems.pdf
-            resume-fullstack.pdf
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
