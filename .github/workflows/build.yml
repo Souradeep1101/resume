@@ -1,16 +1,15 @@
 name: Build Resume
 
-# Trigger the build when you push a new tag (e.g., v1.0, v2026.1)
 on:
   push:
-    tags:
-      - "v*"
+    branches: [ "main" ]  # Run on normal pushes to check for errors
+    tags: [ "v*" ]        # Run AND Release when you push a tag like v1.0
 
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # This is required to create Releases
+      contents: write
       
     steps:
       - name: Checkout Code
@@ -19,15 +18,14 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          # REPLACE 'resume.tex' WITH YOUR ACTUAL FILENAME
+          # MAKE SURE THIS MATCHES YOUR FILE NAME (e.g., resume-systems.tex)
           root_file: |
             resume-systems.tex
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
+        # Only run this step if we actually pushed a tag
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          # This uploads the compiled PDF to the release
-          # ENSURE THIS MATCHES THE OUTPUT FILENAME (usually same as .tex but with .pdf)
           files: |
             resume-systems.pdf
