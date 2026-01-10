@@ -1,0 +1,195 @@
+%-------------------------
+% Resume in Latex
+% Author : Souradeep Banerjee
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+%----------FONT OPTIONS----------
+% (Uncomment only one to change font style)
+% \usepackage[sfdefault]{FiraSans}  % sans-serif
+% \usepackage{CormorantGaramond}    % serif
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- OPTIMIZATION 1: MAXIMIZE PAGE USAGE ---
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% --- OPTIMIZATION 2: SECTION SPACING ---
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% --- OPTIMIZATION 3: LIST SPACING ---
+% This pulls bullet points closer together
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=-1pt, leftmargin=0.15in]} % Tighter items
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Souradeep Banerjee} \\ \vspace{2pt}
+    \small (480) 743-3328 $|$ \href{mailto:sbaner92@asu.edu}{\underline{sbaner92@asu.edu}} $|$
+    \href{https://souradeep.dev/}{\underline{souradeep.dev}} $|$
+    \href{https://linkedin.com/in/souradeep1101}{\underline{linkedin.com/in/souradeep1101}} $|$
+    \href{https://github.com/souradeep1101}{\underline{github.com/souradeep1101}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Arizona State University}{Tempe, Arizona}
+      {Bachelor of Science, Computer Science (Concentration: Software Engineering)}{Expected May 2027}
+      \resumeItemListStart
+        \resumeItem{\textbf{GPA: 3.53}; Dean's List; New American University Scholar}
+        \resumeItem{Relevant Coursework: Data Structures \& Algorithms, Computer Architecture, Operating Systems, Competitive Programming.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineering Intern}{Jan 2023 -- Jan 2024}
+      {Cruv.org}{Kolkata, India (Remote)}
+      \resumeItemListStart
+        \resumeItem{Engineered a scalable \textbf{client-side architecture} by evaluating and integrating disparate open-source libraries, deeply debugging and patching external code to ensure stability within the application runtime.}
+        \resumeItem{Optimized the mobile data transport layer by implementing request batching and local caching, reducing API latency by \textbf{75\% (3.2s to 0.8s)} and minimizing network overhead.}
+        \resumeItem{Enforced strict \textbf{type safety contracts} across the UI state management layer, virtually eliminating runtime serialization errors and ensuring protocol consistency with the backend.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    
+    \resumeProjectHeading
+      {\textbf{Cyclops MIPS (Cycle-Accurate CPU Emulator)} $|$ \emph{C++23, ImGui, GTest, CMake}}{Nov 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Architected a strictly-typed \textbf{MIPS R2000 simulator} capable of executing binary machine code with full support for \textbf{5-Stage Pipelining}, Data Hazards, and Branch Delay Slots.}
+        \resumeItem{Implemented a \textbf{Forwarding Unit} and \textbf{Hazard Detection Unit} to resolve data dependencies without stalling, optimizing Instructions Per Cycle (IPC) throughput.}
+        \resumeItem{Designed a \textbf{Virtual Memory Management Unit (MMU)} with a Translation Lookaside Buffer (TLB) to simulate paging and memory protection faults.}
+        \resumeItem{Implemented a custom \textbf{Two-Pass Assembler} in C++ to parse MIPS source code, resolve symbol labels, and generate binary machine code, enabling direct execution of user programs.}
+        \resumeItem{Validated hardware correctness via \textbf{Google Test (GTest)} against edge cases (overflow, unaligned access) and developed a real-time \textbf{ImGui Dashboard} for cycle-by-cycle pipeline debugging.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+    {\textbf{Cyclops Studio (High-Performance Animation Engine)} $|$ \emph{C++23, OpenGL 4.6, ImGui, CMake}}{Oct 2025 -- Present}
+    \resumeItemListStart
+        \resumeItem{Architected a \textbf{Data-Oriented rendering pipeline} using Modern OpenGL 4.6 (DSA), utilizing \textbf{Batch Rendering} and dynamic vertex streaming to saturate GPU bus bandwidth, achieving seamless \textbf{4K/144 FPS}.}
+        \resumeItem{Engineered a zero-copy \textbf{Layer Compositing System} using custom Framebuffer Objects (FBOs) and separate blend states, decoupling the high-frequency simulation loop from the display rasterization stage.}
+        \resumeItem{Designed a cache-coherent \textbf{Particle Simulation Engine} capable of handling \textbf{100k+ concurrent entities} by implementing a custom \textbf{Linear Arena Allocator}, eliminating heap fragmentation and cache misses.}
+        \resumeItem{Built a robust \textbf{Asset Serialization System} (YAML) with hot-reloading capabilities for brush dynamics, integrated into a modular \textbf{ImGui Docking} workspace to accelerate technical artist workflows.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Joint DiT (Multimodal Diffusion Model)} $|$ \emph{Python, PyTorch, CUDA}}{Jul 2025 -- Oct 2025}
+      \resumeItemListStart
+        \resumeItem{Designed a novel multimodal architecture generating synchronized audio/video; solved critical \textbf{OOM bottlenecks} on single-GPU setups via query chunking and KV-cache optimization.}
+        \resumeItem{Implemented custom attention masks to synchronize cross-modal feature vectors, demonstrating deep understanding of matrix operations and GPU memory constraints.}
+        \resumeItem{Deployed a user-friendly model demonstration interface using Gradio and established a CI/CD pipeline for automated documentation updates via MkDocs.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------LEADERSHIP & ACHIEVEMENTS-----------
+\section{Leadership \& Achievements}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {ICPC Rocky Mountain Regional Contest 2025}{Nov 2025 -- Nov 2025}
+      {Selected to represent ASU as a regional finalist; competed against top university teams in the region.}{Tempe, AZ}
+
+    \resumeSubheading
+      {Manager of Industry Programs, ACM at ASU}{Oct 2025 -- Present}
+      {Lead technical operations and industry relations; automated internal newsletters using \textbf{Docker/React}.}{Tempe, AZ}
+
+    \resumeSubheading
+      {ICPC North American Qualifier (NAQ) 2025, 2nd Place Finisher}{Oct 2025 -- Oct 2025}
+      {Secured 2nd Place (ASU Site) by solving 5 algorithmic problems under strict time constraints.}{Tempe, AZ}
+
+    \resumeSubheading
+      {CodePath Advanced Software Engineering (TIP 102)}{Aug 2025 -- Dec 2025}
+      {Earned ``Advanced'' certification (Top 5\%) for mastering complex graph algorithms and DP.}{Tempe, AZ}
+      
+    \resumeSubheading
+      {Grand Challenges Scholars Program (AI Scholar)}{Aug 2024 -- Present}
+      {Conducting interdisciplinary research on Generative AI applications for the ``Joy of Living'' theme.}{Tempe, AZ}
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++ (17/20/23), C, Assembly (MIPS), Python, SQL, Java, Dart, JavaScript/TypeScript} \\
+     \textbf{Systems \& Cloud}{: Linux (Kernel/User), Docker, Kubernetes, AWS, CMake, GDB, CI/CD, Git} \\
+     \textbf{Libraries \& Frameworks}{: OpenGL, ImGui, STL, PyTorch, React.js, Node.js, Flutter, Next.js} \\
+     \textbf{Concepts}{: Computer Architecture, OS Internals, Concurrency, Memory Management, Distributed Systems}
+    }}
+ \end{itemize}
+
+\end{document}
