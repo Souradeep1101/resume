@@ -1,7 +1,7 @@
 %-------------------------
 % Resume in Latex
-% Author : Souradeep Banerjee
-% Based off of: https://github.com/sb2nov/resume
+% Author: Souradeep Banerjee
+% Based on: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
 
@@ -34,7 +34,7 @@
 \addtolength{\oddsidemargin}{-0.6in}
 \addtolength{\evensidemargin}{-0.6in}
 \addtolength{\textwidth}{1.2in}
-\addtolength{\topmargin}{-.7in}
+\addtolength{\topmargin}{-0.7in}
 \addtolength{\textheight}{1.4in}
 
 \urlstyle{same}
@@ -104,7 +104,7 @@
       {Arizona State University}{Tempe, Arizona}
       {Bachelor of Science, Computer Science (Concentration: Software Engineering)}{Expected May 2027}
       \resumeItemListStart
-        \resumeItem{\textbf{GPA: 3.53}; Dean's List; New American University Scholar}
+        \resumeItem{GPA: 3.5; Dean's List; New American University Scholar}
         \resumeItem{Relevant Coursework: Data Structures \& Algorithms, Computer Architecture, Operating Systems, Competitive Programming.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
@@ -114,13 +114,21 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
+      {Undergraduate Student Researcher}{May 2026 -- Present}
+      {STAM Center at ASU}{Tempe, AZ}
+      \resumeItemListStart
+        \resumeItem{Engineered a custom \textbf{LLVM optimization pass} for dynamic Intermediate Representation (IR) instrumentation, profiling runtime execution frequencies across 6 distinct architectural instruction categories.}
+        \resumeItem{Decreased instrumented binary size and execution overhead by optimizing state updates, aggregating per-instruction \texttt{load/add/store} routines into singular \textbf{basic-block terminator injections}, validating performance via the \textbf{EmBench-iot suite} across O0--O2 optimization levels.}
+        \resumeItem{Investigated capability-aware hardware-software co-design---a security model replacing plain memory addresses with metadata-bound access permissions---by analyzing the \textbf{Zeno Compiler's} transparent, \textbf{Namespace-based (NSID)} translation for secure \textbf{RISC-V architectures}.}
+      \resumeItemListEnd
+
+    \resumeSubheading
       {Software Engineering Intern}{Jan 2023 -- Jan 2024}
       {Cruv.org}{Kolkata, India (Remote)}
       \resumeItemListStart
-      \resumeItem{Delivered \textbf{2} full-scale client-side applications, reducing UI state bugs by an estimated \textbf{30\%}, by establishing robust state management architectures using Flutter and Dart.}
-      \resumeItem{Achieved a consistent \textbf{60 FPS} rendering baseline on constrained mobile devices, decreasing frame drop rates by \textbf{40\%}, by aggressively profiling and optimizing custom animation loops within the Flutter framework.}
-      \resumeItem{Accelerated feature development timelines by roughly \textbf{20\%} by evaluating, debugging, and seamlessly integrating \textbf{5} complex third-party open-source Flutter libraries into proprietary codebases.}
-    \resumeItemListEnd
+        \resumeItem{Delivered \textbf{2} full-scale client-side applications with a consistent \textbf{60 FPS} baseline and \textbf{30\%} fewer UI bugs by architecting robust state management and optimizing custom animation loops in Flutter.}
+        \resumeItem{Accelerated feature development timelines by \textbf{20\%} by systematically evaluating, debugging, and integrating \textbf{5} complex open-source Dart libraries into proprietary codebases.}
+      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
@@ -129,29 +137,26 @@
   \resumeSubHeadingListStart
     
     \resumeProjectHeading
-      {\textbf{Cyclops MIPS (Cycle-Accurate CPU Emulator)} $|$ \emph{C++23, ImGui, GTest, CMake}}{Nov 2025 -- Present}
+      {\textbf{Cyclops MIPS (Cycle-Accurate CPU Emulator)} $|$ \emph{C++23, ImGui, GTest, CMake} $|$ \href{https://www.souradeep.dev/projects/cyclops-mips}{\underline{Demo}}}{Nov 2025 -- Present}
       \resumeItemListStart
-        \resumeItem{Architected a strictly-typed \textbf{MIPS R2000 simulator} capable of executing binary machine code with full support for \textbf{5-Stage Pipelining}, Data Hazards, and Branch Delay Slots.}
-        \resumeItem{Implemented a \textbf{Forwarding Unit} and \textbf{Hazard Detection Unit} to resolve data dependencies without stalling, optimizing Instructions Per Cycle (IPC) throughput.}
-        \resumeItem{Designed a \textbf{Virtual Memory Management Unit (MMU)} with a Translation Lookaside Buffer (TLB) to simulate paging and memory protection faults.}
-        \resumeItem{Implemented a custom \textbf{Two-Pass Assembler} in C++ to parse MIPS source code, resolve symbol labels, and generate binary machine code, enabling direct execution of user programs.}
-        \resumeItem{Validated hardware correctness via \textbf{Google Test (GTest)} against edge cases (overflow, unaligned access) and developed a real-time \textbf{ImGui Dashboard} for cycle-by-cycle pipeline debugging.}
+        \resumeItem{Engineered a cycle-accurate 5-stage MIPS32 CPU simulator in \textbf{C++23}, sustaining optimal \textbf{Instruction Per Cycle (IPC)} by mitigating pipeline flushes and data hazards via a \textbf{256-entry Branch Target Buffer (BTB)} and custom \textbf{EX/MEM forwarding paths}.}
+        \resumeItem{Streamlined instruction execution and memory latency by developing a custom \textbf{two-pass assembler} using \textbf{\texttt{std::expected}} for zero-overhead error handling, integrated with \textbf{4KB direct-mapped L1 caches} featuring write-allocate policies.}
+        \resumeItem{Validated hardware correctness and single-cycle execution precision by architecting a comprehensive \textbf{Google Test (GTest)} and \textbf{Google Benchmark suite}, ensuring deterministic behavior across 20+ instruction edge cases.}
       \resumeItemListEnd
 
     \resumeProjectHeading
-    {\textbf{Cyclops Studio (High-Performance Animation Engine)} $|$ \emph{C++23, OpenGL 4.6, ImGui, CMake}}{Oct 2025 -- Present}
-    \resumeItemListStart
-        \resumeItem{Architected a \textbf{Data-Oriented rendering pipeline} using Modern OpenGL 4.6 (DSA), utilizing \textbf{Batch Rendering} and dynamic vertex streaming to saturate GPU bus bandwidth, achieving seamless \textbf{4K/144 FPS}.}
-        \resumeItem{Engineered a zero-copy \textbf{Layer Compositing System} using custom Framebuffer Objects (FBOs) and separate blend states, decoupling the high-frequency simulation loop from the display rasterization stage.}
-        \resumeItem{Designed a cache-coherent \textbf{Particle Simulation Engine} capable of handling \textbf{100k+ concurrent entities} by implementing a custom \textbf{Linear Arena Allocator}, eliminating heap fragmentation and cache misses.}
-        \resumeItem{Built a robust \textbf{Asset Serialization System} (YAML) with hot-reloading capabilities for brush dynamics, integrated into a modular \textbf{ImGui Docking} workspace to accelerate technical artist workflows.}
-    \resumeItemListEnd
+      {\textbf{Cyclops Studio (High-Performance Animation Engine)} $|$ \emph{C++17, OpenGL 4.6, ImGui, CMake} $|$ \href{https://www.souradeep.dev/projects/cyclops-studio}{\underline{Demo}}}{Oct 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Achieved stable \textbf{4K/144 FPS} rendering by architecting a custom \textbf{OpenGL batched quad renderer} (10,000 quads/call), preventing \textbf{VRAM exhaustion} via an \textbf{FBO-based zero-copy compositing pipeline} that quantizes GPU memory per keyframe.}
+        \resumeItem{Minimized I/O latency and executed sub-millisecond flood-fills by implementing an \textbf{$O(W \times H)$ scanline BFS algorithm} for bulk texture uploads, coupled with a custom \textbf{\texttt{miniz} zlib-deflate binary serialization format} for RGBA8 compression.}
+        \resumeItem{Eliminated main-thread UI blocking during video export by engineering a \textbf{multi-threaded render pipeline}, using \textbf{\texttt{glReadPixels}} to pipe frame buffers directly to background \textbf{\texttt{ffmpeg}} subprocesses.}
+      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Joint DiT (Multimodal Diffusion Model)} $|$ \emph{Python, PyTorch, CUDA}}{Jul 2025 -- Oct 2025}
       \resumeItemListStart
           \resumeItem{Engineered a multimodal diffusion architecture, expanding maximum sequence length by \textbf{300\%} without Out-Of-Memory (OOM) crashes, by implementing aggressive \textbf{KV-cache optimization} and query chunking on single-GPU setups.}
-          \resumeItem{Optimized cross-modal feature synchronization, reducing matrix computation overhead by \textbf{40\%}, by designing and implementing custom, memory-efficient \textbf{attention masks}.}
+          \resumeItem{Reduced cross-modal matrix computation overhead by \textbf{40\%} via custom, memory-efficient \textbf{attention masks}.}
           \resumeItem{Accelerated iteration cycles by automating deployment and documentation, saving an estimated \textbf{5 hours per week} in developer overhead, by establishing a robust \textbf{CI/CD pipeline} and Gradio interface.}
     \resumeItemListEnd
 
@@ -162,33 +167,30 @@
   \resumeSubHeadingListStart
   
     \resumeSubheading
-      {ICPC Rocky Mountain Regional Contest 2025}{Nov 2025 -- Nov 2025}
-      {Selected to represent ASU as a regional finalist; competed against top university teams in the region.}{Tempe, AZ}
+      {1st Place Hackathon Wins: ASA DataFest (Best Insight) \& VillageHacks}{Mar 2026 -- Apr 2026}
+      {Architected algorithmic solutions and data pipelines to secure top inter-university placements.}{Tempe, AZ}
 
     \resumeSubheading
-      {Manager of Industry Programs, ACM at ASU}{Oct 2025 -- Present}
-      {Lead technical operations and industry relations; automated internal newsletters using \textbf{Docker/React}.}{Tempe, AZ}
+      {ICPC Rocky Mountain Regional Finalist \& NAQ 2nd Place Finisher}{Oct 2025 -- Nov 2025}
+      {Secured 2nd Place locally (5 problems solved); advanced to represent ASU against top regional teams.}{Tempe, AZ}
 
     \resumeSubheading
-      {ICPC North American Qualifier (NAQ) 2025, 2nd Place Finisher}{Oct 2025 -- Oct 2025}
-      {Secured 2nd Place (ASU Site) by solving 5 algorithmic problems under strict time constraints.}{Tempe, AZ}
+      {Manager of Special Programs, ACM at ASU}{Oct 2025 -- Present}
+      {Instruct ICPC Primer workshop series on advanced algorithms, Segment Trees, and Disjoint Set Union.}{Tempe, AZ}
 
     \resumeSubheading
-      {CodePath Advanced Software Engineering (TIP 102)}{Aug 2025 -- Dec 2025}
-      {Earned ``Advanced'' certification (Top 5\%) for mastering complex graph algorithms and DP.}{Tempe, AZ}
-      
-    \resumeSubheading
-      {Grand Challenges Scholars Program (AI Scholar)}{Aug 2024 -- Present}
-      {Conducting interdisciplinary research on Generative AI applications for the ``Joy of Living'' theme.}{Tempe, AZ}
+      {Grand Challenges Scholar (Secure Systems) \& CodePath Advanced SWE (Top 5\%)}{Aug 2024 -- Present}
+      {Research secure HW/SW architecture; earned Advanced certification mastering graph \& DP algorithms.}{Tempe, AZ}
+
   \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: C++ (17/20/23), C, Assembly (MIPS), Python, SQL, Java, Dart, JavaScript/TypeScript} \\
+     \textbf{Languages}{: C++ (17/20/23), Rust, C, Assembly (MIPS, RISC-V), Python, SQL, Java, Dart, JavaScript/TypeScript} \\
      \textbf{Systems \& Cloud}{: Linux (Kernel/User), Docker, Kubernetes, AWS, CMake, GDB, CI/CD, Git} \\
-     \textbf{Libraries \& Frameworks}{: OpenGL, ImGui, STL, PyTorch, React.js, Node.js, Flutter, Next.js} \\
+     \textbf{Libraries \& Frameworks}{: LLVM, OpenGL, ImGui, STL, PyTorch, React.js, Node.js, Flutter} \\
      \textbf{Concepts}{: Computer Architecture, OS Internals, Concurrency, Memory Management, Distributed Systems}
     }}
  \end{itemize}
